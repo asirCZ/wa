@@ -14,15 +14,15 @@
         <h2>Registration Form</h2>
         <form action="/submit-registration" method="post" onsubmit="return validateForm(event)">
             <label for="jméno">Jméno:</label>
-            <input type="text" id="jméno" name="jméno" required pattern="[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z]{1,20}">
+            <input type="text" id="jméno" name="jméno" required pattern="[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z]{1,20}" oninput="validateInput(this)">
             <br>
 
             <label for="příjmení">Příjmení:</label>
-            <input type="text" id="příjmení" name="příjmení" required pattern="[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z]{1,20}">
+            <input type="text" id="příjmení" name="příjmení" required pattern="[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z]{1,20}" oninput="validateInput(this)">
             <br>
 
             <label for="třída">Třída:</label>
-            <input type="text" id="třída" name="třída" required pattern="^[a-zA-Z0-9]">
+            <input type="text" id="třída" name="třída" required pattern="[a-zA-Z0-9]{2,3}">
             <br>
 
             <label for="nick">Přezdívka osoby:</label>
@@ -76,17 +76,17 @@
     </div>
 
     <script>
-        $(function(){
-            $("input[name=jméno]")[0].oninvalid = function () {
+        function validateInput() {
+            if (this.validity.valid) {
+                this.setCustomValidity(null);
+            }
+            else {
                 this.setCustomValidity("Please follow the format [ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z]{1,20}. Pokud nerozumis tak nejedes na vodak");
-            };
-        });
-        $(function(){
-            $("input[name=příjmení]")[0].oninvalid = function () {
-                this.setCustomValidity("Please follow the format [ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z]{1,20}.");
-            };
-        });
+            }
+        }
         
+
+
         function showRegistrationForm() {
             document.getElementById("registrationForm").style.display = "block";
             document.getElementById("openreg").hidden = true;
@@ -166,5 +166,4 @@
     });
     </script>
 </body>
-
 </html>
