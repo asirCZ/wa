@@ -1,0 +1,94 @@
+# Express App Documentation
+
+## Dependencies
+
+- **express:** A web application framework for Node.js.
+- **body-parser:** Middleware to parse the request body.
+- **fs (File System):** A module to interact with the file system.
+- **path:** A module for working with file and directory paths.
+
+## Configuration
+
+1. **Server Setup:**
+   ```javascript
+   const express = require("express");
+   const bodyParser = require("body-parser");
+   const fs = require('fs');
+   const path = require('path');
+
+   const app = express();```
+
+2. **Data Files Paths:**
+```javascript
+const dataFilePath = path.join(__dirname, 'registrations.json');
+const feedbackDataFile = path.join(__dirname, 'feedback.json');```
+
+3. **Load Existing Data:**
+```javascript
+fs.readFile(dataFilePath, 'utf8', (err, data) => {
+  if (!err) {
+    registrations = JSON.parse(data);
+  }
+});```
+
+4. **Middleware Setup:**
+```javascript
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.use(express.json());```
+
+5. **View Engine Setup:**
+```javascript
+    app.set('views', './views');
+    app.set('view engine', 'ejs');```
+
+
+## Routes
+
+1. **Render First Page:**
+```javascript
+app.get('/', (req, res) => {
+  res.render(__dirname + '/views/first_page.ejs', { registrations });
+});```
+
+2. **Render Second Page:**
+```javascript
+app.get('/second_page', (req, res) => {
+  res.render(__dirname + '/views/second_page.ejs');
+});```
+
+3. **Render Registration Page:**
+```javascript
+app.get('/registrace', (req, res) => {
+  res.render(__dirname + '/views/registrace.ejs');
+});```
+
+4. **API Endpoint to Check Nickname:**
+```javascript
+app.get('/api/check-nickname/:nick', (req, res) => { /* ... */ });```
+
+5. **Handle Registration Form Submission:**
+```javascript
+app.post('/submit-registration', (req, res) => { /* ... */ });```
+
+6. **Handle Feedback Form Submission:**
+```javascript
+    app.post('/submit-feedback', (req, res) => { /* ... */ });```
+
+## Registration Validation
+    Check for existing nickname.
+    Validate je_plavec and kanoe_kamarad.
+    Validate nickname using regex.
+
+## Feedback Validation
+    Ensure feedback is not empty.
+    Store feedback data with timestamp.
+
+## Server Start
+```javascript
+const server = app.listen(22102, () => {
+  console.log("Listening on port 22102");
+});```
+
+## Conclusion
+This Express application provides routes for rendering pages, checking nicknames, handling registration form submissions, and collecting feedback. It uses JSON files to persist registration and feedback data. The server listens on port 22102.
