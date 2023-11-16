@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <title>Vodáček</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Registrations</h1>
+    <table>
+        <tr>
+            <th>Nick</th>
+            <th>Is Plavec</th>
+            <th>Kanoe Kamarad</th>
+            <th>Jméno</th>
+            <th>Příjmení</th>
+            <th>Třída</th>
+        </tr>
+        <!-- Loop through registrations and display each entry in the table -->
+        <% registrations.forEach((reg, index, array) => {
+            // Determine if this registration is connected to another
+            let isConnected = array.some(r => r.nick.toUpperCase() === reg.kanoe_kamarad.toUpperCase() && reg.nick.toUpperCase() === r.kanoe_kamarad.toUpperCase());
+            let rowId = isConnected ? 'connected' : '';
+        %>
+            <tr id="<%= rowId %>">
+                <td><%= reg.nick %></td>
+                <td><%= reg.je_plavec %></td>
+                <td><%= reg.kanoe_kamarad %></td>
+                <td><%= reg.jméno %></td>
+                <td><%= reg.příjmení %></td>
+                <td><%= reg.třída %></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

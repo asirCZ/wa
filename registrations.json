@@ -1,0 +1,95 @@
+[
+  {
+    "nick": "Mandik",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "Lopocha"
+  },
+  {
+    "nick": "aaa",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "bbb",
+    "jméno": "richard",
+    "příjmení": "bilrk",
+    "třída": "eee"
+  },
+  {
+    "nick": "bbb",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "aaa",
+    "jméno": "richardd",
+    "příjmení": "bilrkd",
+    "třída": "eee"
+  },
+  {
+    "nick": "kamilek3000",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "Kukelka",
+    "jméno": "kamil",
+    "příjmení": "skocdopole",
+    "třída": "C1c"
+  },
+  {
+    "nick": "Kukelka",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "bilek2",
+    "jméno": "F",
+    "příjmení": "K",
+    "třída": "C1c"
+  },
+  {
+    "nick": "bilek2",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "kukelka",
+    "jméno": "R",
+    "příjmení": "B",
+    "třída": "C1c"
+  },
+  {
+    "nick": "bilek2A",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "kukelkaA",
+    "jméno": "RA",
+    "příjmení": "BA",
+    "třída": "C1c"
+  },
+  {
+    "nick": "bilek2Adgdgdg",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "kukelkaAgdgdfgdgdfg",
+    "jméno": "RAdfg",
+    "příjmení": "BAdfg",
+    "třída": "C1c"
+  },
+  {
+    "nick": "Lopocha",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "Mandik",
+    "jméno": "Lo",
+    "příjmení": "Pocha",
+    "třída": "C5c"
+  },
+  {
+    "nick": "asir002",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "N/A",
+    "jméno": "Daniel1",
+    "příjmení": "Adamek!",
+    "třída": "C2c"
+  },
+  {
+    "nick": "Daniel",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "N/A",
+    "jméno": "Daniel",
+    "příjmení": "Adámek",
+    "třída": "a"
+  },
+  {
+    "nick": "Simca",
+    "je_plavec": "Ano",
+    "kanoe_kamarad": "Daniel",
+    "jméno": "Simona",
+    "příjmení": "Hemžalová",
+    "třída": "c"
+  }
+]
